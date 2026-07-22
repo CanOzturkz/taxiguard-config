@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "tariffVersion": "2026-07-22",
+  "source": "İstanbul: İBB 20 Temmuz 2026 tarifesi (%10 zam — sarı rakamları CNN Türk + Hürriyet/Sabah ile çapraz doğrulandı) · Ankara: 1 Mart 2026 tarifesi · İzmir: İzmir BŞB meclisi 1 Nisan 2026 tarifesi · Geçiş ücretleri: KGM 2026 tarifesi + Avrasya Tüneli 1 Temmuz 2026 zammı",
+  "lastVerified": "2026-07-22",
+  "meterCalibration": 1.04,
+  "defaultCity": "istanbul",
+  "remoteConfigUrl": "https://raw.githubusercontent.com/CanOzturkz/taxiguard-config/main/tariffs.json",
+  "fraudThresholds": {
+    "safeMax": 1.2,
+    "criticalMin": 1.6
+  },
+  "serviceArea": {
+    "country": "TR",
+    "note": "Uygulama YALNIZ Türkiye'de çalışır: tarifeler, geçiş ücretleri ve şikâyet hatları (153 / Turizm Polisi) Türkiye'ye özgüdür. Bu kutunun dışında rota çizmek İstanbul tarifesiyle anlamsız bir tutar üretirdi. Kaba sınırlayıcı kutu — komşu ülkelerin sınır bölgelerini de kapsar; amaç yanlış ülke tarifesiyle hesap yapmayı engellemek, gümrük hassasiyetinde sınır çizmek değil.",
+    "minLat": 35.75,
+    "maxLat": 42.35,
+    "minLng": 25.55,
+    "maxLng": 45
+  },
+  "cities": {
+    "istanbul": {
+      "name": "İstanbul",
+      "country": "TR",
+      "currency": "TRY",
+      "singleTariff": true,
+      "verified": true,
+      "note": "İstanbul'da 7/24 tek tarife uygulanır, gece/gündüz farkı yoktur. TARİFE 20 Temmuz 2026'dan itibaren %10 ZAMLI: sarı açılış ₺71,94 · km ₺47,92 · bekleme ₺598,90/saat (=₺9,98/dk) · indi-bindi ₺230 — bu rakamlar iki kaynakla (CNN Türk + Hürriyet/Sabah) çapraz doğrulandı ve eski değerlerin tam %10 üstü çıkıyor (65,40×1,10=71,94). Turkuaz/siyah için haberlerde AYRI RAKAM YAYINLANMADI; zam 'sarı, turkuaz ve lüks'e %10 olarak ilan edildiğinden bu ikisinin açılış/km değerleri tam %10 uygulanarak TÜRETİLDİ (bekleme ve indi-bindi zaten tüm tiplerde ortak) — resmi tabloya erişilirse teyit et. appHailFee: BiTaksi (uygulama ile çağırma) hizmet komisyonu — sahada BiTaksi'de ~₺50 gözlemlendi (2026-07-20). 'BiTaksi ile çağırdım' işaretlenince karşılaştırma tavanına eklenir. Sokaktan çevrilen takside kart için ek ücret YASAL DEĞİLDİR — o durumda eklenmez, fazla ücret olarak işaretlenir.",
+      "appHailFee": 50,
+      "center": {
+        "lat": 41.0082,
+        "lon": 28.9784
+      },
+      "radiusKm": 70,
+      "defaultTaxiType": "sari",
+      "taxiTypes": {
+        "sari": {
+          "label": "Sarı Taksi",
+          "labelEn": "Yellow Taxi",
+          "opening": 71.94,
+          "perKm": 47.92,
+          "perMinuteWaiting": 9.98,
+          "minimumFare": 230
+        },
+        "turkuaz": {
+          "label": "Turkuaz Taksi",
+          "labelEn": "Turquoise Taxi",
+          "opening": 82.73,
+          "perKm": 55.1,
+          "perMinuteWaiting": 9.98,
+          "minimumFare": 230
+        },
+        "siyah": {
+          "label": "Siyah (Lüks) Taksi",
+          "labelEn": "Black (Premium) Taxi",
+          "opening": 122.3,
+          "perKm": 81.46,
+          "perMinuteWaiting": 9.98,
+          "minimumFare": 230
+        }
+      },
+      "tollsSource": "KGM 2026 geçiş tarifesi + Avrasya Tüneli 1 Temmuz 2026 zammı (%17,86). Otomobil: 15 Temmuz Şehitler ₺59, FSM ₺59 — İKİSİ DE TEK YÖN ücretlidir, yalnız Anadolu→Avrupa yönünde alınır; Avrupa→Anadolu ücretsizdir. Yavuz Sultan Selim (YSS) köprüsü ₺110 ve HER İKİ YÖNDE ücretlidir; O-7 otoyolunun köprü dışındaki ayakları AYRICA ve mesafeye göre faturalanır (gişe çiftine bağlı, doğrusal değil: Kınalı→Silivri ₺55, Kınalı→Fatih ₺220) — bu yüzden ayrı ve aralıklı bir kalem olarak modellenir. Avrasya Tüneli ₺330 gündüz / ₺165 gece (00:00–04:59), her iki yönde. Köprüler tollGates ile coğrafi olarak (orta açıklıkta, geçişe DİK kapı çizgisi) tespit edilir; tünel GPS sinyal boşluğu imzasıyla, O-7 otoyol ayakları rota metnindeki yol adıyla.",
+      "tolls": [
+        {
+          "id": "bosphorus",
+          "label": "Bosphorus Bridge (15 Temmuz / FSM)",
+          "fee": 59,
+          "chargedDirection": "west",
+          "keywords": []
+        },
+        {
+          "id": "yssbridge",
+          "label": "Yavuz Sultan Selim Bridge",
+          "fee": 110,
+          "chargedDirection": "both",
+          "note": "Yolculuk sırasında tollGates ile coğrafi olarak bulunur; anahtar kelimeler YALNIZ yola çıkmadan önceki tahmin içindir (o an GPS izi yoktur). Çifte sayma olmaz: yolculuk içinde rota metninden yalnız northmarmara alınır.",
+          "keywords": [
+            "yavuz sultan selim",
+            "yavuz sultan selim bridge",
+            "yavuz sultan selim köprüsü",
+            "yss"
+          ]
+        },
+        {
+          "id": "eurasia",
+          "label": "Eurasia Tunnel",
+          "fee": 330,
+          "nightFee": 165,
+          "nightHours": [
+            0,
+            5
+          ],
+          "keywords": [
+            "eurasia tunnel",
+            "avrasya",
+            "avrasya tüneli",
+            "avrasya tuneli"
+          ]
+        },
+        {
+          "id": "northmarmara",
+          "label": "Northern Marmara Motorway (O-7)",
+          "fee": 55,
+          "feeMax": 220,
+          "approximate": true,
+          "note": "YSS köprüsü HARİÇ, O-7'nin otoyol ayakları. Gişe çiftine göre ₺55–₺220 arası; alt sınır tavana yazılır, aradaki fark belirsizlik payına gider.",
+          "keywords": [
+            "o-7",
+            "o7",
+            "kuzey marmara",
+            "kuzey marmara otoyolu",
+            "northern marmara",
+            "northern marmara motorway"
+          ]
+        }
+      ],
+      "tollGatesSource": "Koordinatlar OpenStreetMap güverte geometrisinden türetildi (2026-07-22): her köprünün man_made=bridge yolu çekildi, güvertenin ORTA BOYLAMINDAKİ gerçek noktası kapı merkezi alındı. DOĞRULAMA: kapı çizgileri 400 m yarıçaptaki 56 komşu yola karşı kesişim testinden geçirildi — 300, 400 ve 600 m yarı uzunlukta her kapının kestiği TEK yol kendi köprüsüdür (sahil yolu dahil hiçbir yan yol kesilmiyor). 400 m seçildi: güverte genişliğinin ~10 katı, GPS yanal hatasına bol pay bırakır, yine de temiz.",
+      "tollGates": [
+        {
+          "id": "bogazici",
+          "tollId": "bosphorus",
+          "label": "15 Temmuz Şehitler Köprüsü",
+          "lat": 41.04525,
+          "lng": 29.03439,
+          "halfLengthM": 400
+        },
+        {
+          "id": "fsm",
+          "tollId": "bosphorus",
+          "label": "Fatih Sultan Mehmet Köprüsü",
+          "lat": 41.09144,
+          "lng": 29.06117,
+          "halfLengthM": 400
+        },
+        {
+          "id": "yss",
+          "tollId": "yssbridge",
+          "label": "Yavuz Sultan Selim Köprüsü",
+          "lat": 41.20279,
+          "lng": 29.11174,
+          "halfLengthM": 400
+        }
+      ],
+      "tunnelGapsSource": "Portal koordinatları OpenStreetMap'ten doğrulandı (2026-07-22): name=Avrasya Tüneli + tunnel=yes yollarının uçları. Tünel gövdesi 28.96930–29.02833 boylamları arasında, ~5,0 km. portalRadiusKm sinyalin portala VARMADAN kesilebilmesi için cömert tutuldu; iki portal 5 km ayrı olduğundan yarıçaplar çakışmaz.",
+      "tunnelGaps": [
+        {
+          "id": "eurasia",
+          "tollId": "eurasia",
+          "label": "Avrasya Tüneli",
+          "portalA": {
+            "lat": 41.0024,
+            "lng": 28.9693
+          },
+          "portalB": {
+            "lat": 41.0049,
+            "lng": 29.02833
+          },
+          "portalRadiusKm": 1.2,
+          "minGapSec": 90
+        }
+      ]
+    },
+    "ankara": {
+      "name": "Ankara",
+      "country": "TR",
+      "currency": "TRY",
+      "singleTariff": true,
+      "verified": true,
+      "note": "1 Mart 2026 tarifesi: açılış ₺65, km ₺40, indi-bindi ₺200, bekleme ₺7/dk (₺420/saat). İki bağımsız kaynakla (Cumhuriyet + tarife dokümanları) çapraz doğrulandı; 7/24 tek tarife. Şehir-içi taksi için toll modellenmedi.",
+      "center": {
+        "lat": 39.9334,
+        "lon": 32.8597
+      },
+      "radiusKm": 45,
+      "defaultTaxiType": "standart",
+      "taxiTypes": {
+        "standart": {
+          "label": "Standart Taksi",
+          "labelEn": "Standard Taxi",
+          "opening": 65,
+          "perKm": 40,
+          "perMinuteWaiting": 7,
+          "minimumFare": 200
+        }
+      },
+      "tolls": []
+    },
+    "izmir": {
+      "name": "İzmir",
+      "country": "TR",
+      "currency": "TRY",
+      "singleTariff": true,
+      "verified": true,
+      "note": "1 Nisan 2026 tarifesi (İzmir BŞB meclisi): açılış ₺34,50, km ₺49,50, indi-bindi ₺180, bekleme ₺207/saat (₺3,45/dk). NTV + DHA çapraz doğrulama; 7/24 tek tarife. Şehir-içi taksi için toll modellenmedi.",
+      "center": {
+        "lat": 38.4237,
+        "lon": 27.1428
+      },
+      "radiusKm": 45,
+      "defaultTaxiType": "standart",
+      "taxiTypes": {
+        "standart": {
+          "label": "Standart Taksi",
+          "labelEn": "Standard Taxi",
+          "opening": 34.5,
+          "perKm": 49.5,
+          "perMinuteWaiting": 3.45,
+          "minimumFare": 180
+        }
+      },
+      "tolls": []
+    }
+  }
+}
