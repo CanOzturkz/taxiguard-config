@@ -3,7 +3,7 @@
   "tariffVersion": "2026-07-22",
   "source": "İstanbul: İBB 20 Temmuz 2026 tarifesi (%10 zam — sarı rakamları CNN Türk + Hürriyet/Sabah ile çapraz doğrulandı) · Ankara: 1 Mart 2026 tarifesi · İzmir: İzmir BŞB meclisi 1 Nisan 2026 tarifesi · Geçiş ücretleri: KGM 2026 tarifesi + Avrasya Tüneli 1 Temmuz 2026 zammı",
   "lastVerified": "2026-07-22",
-  "meterCalibration": 1.0,
+  "meterCalibration": 1.05,
   "defaultCity": "istanbul",
   "remoteConfigUrl": "https://raw.githubusercontent.com/CanOzturkz/taxiguard-config/main/tariffs.json",
   "fraudThresholds": { "safeMax": 1.20, "criticalMin": 1.60 },
