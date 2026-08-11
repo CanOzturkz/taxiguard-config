@@ -22,7 +22,7 @@
       "currency": "TRY",
       "singleTariff": true,
       "verified": true,
-      "note": "İstanbul'da 7/24 tek tarife uygulanır, gece/gündüz farkı yoktur. TARİFE 20 Temmuz 2026'dan itibaren %10 ZAMLI: sarı açılış ₺71,94 · km ₺47,92 · bekleme ₺598,90/saat (=₺9,98/dk) · indi-bindi ₺230 — bu rakamlar iki kaynakla (CNN Türk + Hürriyet/Sabah) çapraz doğrulandı ve eski değerlerin tam %10 üstü çıkıyor (65,40×1,10=71,94). Turkuaz/siyah için haberlerde AYRI RAKAM YAYINLANMADI; zam 'sarı, turkuaz ve lüks'e %10 olarak ilan edildiğinden bu ikisinin açılış/km değerleri tam %10 uygulanarak TÜRETİLDİ (bekleme ve indi-bindi zaten tüm tiplerde ortak) — resmi tabloya erişilirse teyit et. Kart komisyonu modeli KALDIRILDI (2026): Türkiye'de kartla ödemede komisyon almak 5464 sayılı kanuna göre YASA DIŞIDIR (kartla ödeme nakitle aynı olmalı). Daha önce ~₺50'yi 'BiTaksi hizmet bedeli' sanıp tavana ekliyorduk; aslında o, yolculuğun ~%11-14'ü kadar olan yasa dışı kart POS komisyonuydu. Artık tavana hiçbir komisyon eklenmez. Turisti bilgilendiren uyarı sonraki adımda eklenecek.",
+      "note": "İstanbul'da 7/24 tek tarife uygulanır, gece/gündüz farkı yoktur. TARİFE 20 Temmuz 2026'dan itibaren %10 ZAMLI: sarı açılış ₺71,94 · km ₺47,92 · bekleme ₺598,90/saat (=₺9,98/dk) · indi-bindi ₺230 — bu rakamlar iki kaynakla (CNN Türk + Hürriyet/Sabah) çapraz doğrulandı ve eski değerlerin tam %10 üstü çıkıyor (65,40×1,10=71,94). Turkuaz/siyah için haberlerde AYRI RAKAM YAYINLANMADI; zam 'sarı, turkuaz ve lüks'e %10 olarak ilan edildiğinden bu ikisinin açılış/km değerleri tam %10 uygulanarak TÜRETİLDİ (bekleme ve indi-bindi zaten tüm tiplerde ortak) — resmi tabloya erişilirse teyit et. BiTaksi/uygulama ÇAĞIRMA BEDELİ (appHailFee, araç tipine göre: sarı/turkuaz ₺50, siyah/lüks ₺90) — kullanıcı gerçek gözlemiyle doğrulandı (2026-08): BiTaksi bu bedeli NAKİT VE KARTTA AYNI alır → kart komisyonu DEĞİL, meşru SABİT çağırma bedelidir; yalnız kullanıcı 'BiTaksi ile çağırdım' derse tavana eklenir (varsayılan kapalı = sokak taksisi). AYRI KONU: sokaktan çevrilen takside KARTA eklenen komisyon 5464 sayılı kanuna göre YASA DIŞIDIR (kartla ödeme nakitle aynı olmalı) → o tavana ASLA girmez, doğru şekilde fazla ücret sayılır. Turisti bilgilendiren 'kart komisyonu yasa dışı' uyarısı ayrı adımda.",
       "center": { "lat": 41.0082, "lon": 28.9784 },
       "radiusKm": 70,
       "defaultTaxiType": "sari",
@@ -33,7 +33,8 @@
           "opening": 71.94,
           "perKm": 47.92,
           "perMinuteWaiting": 9.98,
-          "minimumFare": 230
+          "minimumFare": 230,
+          "appHailFee": 50
         },
         "turkuaz": {
           "label": "Turkuaz Taksi",
@@ -41,7 +42,8 @@
           "opening": 82.73,
           "perKm": 55.10,
           "perMinuteWaiting": 9.98,
-          "minimumFare": 230
+          "minimumFare": 230,
+          "appHailFee": 50
         },
         "siyah": {
           "label": "Siyah (Lüks) Taksi",
@@ -49,7 +51,8 @@
           "opening": 122.30,
           "perKm": 81.46,
           "perMinuteWaiting": 9.98,
-          "minimumFare": 230
+          "minimumFare": 230,
+          "appHailFee": 90
         }
       },
       "tollsSource": "KGM 2026 geçiş tarifesi + Avrasya Tüneli 1 Temmuz 2026 zammı (%17,86). Otomobil: 15 Temmuz Şehitler ₺59, FSM ₺59 — İKİSİ DE TEK YÖN ücretlidir, yalnız Anadolu→Avrupa yönünde alınır; Avrupa→Anadolu ücretsizdir. Yavuz Sultan Selim (YSS) köprüsü ₺110 ve HER İKİ YÖNDE ücretlidir; O-7 otoyolunun köprü dışındaki ayakları AYRICA ve mesafeye göre faturalanır (gişe çiftine bağlı, doğrusal değil: Kınalı→Silivri ₺55, Kınalı→Fatih ₺220) — bu yüzden ayrı ve aralıklı bir kalem olarak modellenir. Avrasya Tüneli ₺330 gündüz / ₺165 gece (00:00–04:59), her iki yönde. Köprüler tollGates ile coğrafi olarak (orta açıklıkta, geçişe DİK kapı çizgisi) tespit edilir; tünel GPS sinyal boşluğu imzasıyla, O-7 otoyol ayakları rota metnindeki yol adıyla.",
