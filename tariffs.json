@@ -177,8 +177,8 @@
       "country": "TR",
       "currency": "TRY",
       "singleTariff": true,
-      "verified": true,
-      "note": "1 Mart 2026 tarifesi: açılış ₺65, km ₺40, indi-bindi ₺200, bekleme ₺7/dk (₺420/saat). İki bağımsız kaynakla (Cumhuriyet + tarife dokümanları) çapraz doğrulandı; 7/24 tek tarife. Şehir-içi taksi için toll modellenmedi.",
+      "verified": false,
+      "note": "1 Mart 2026 tarifesi: açılış ₺65, km ₺40, indi-bindi ₺200, bekleme ₺7/dk. ⚠️ DOĞRULANMADI: Ankara tarifesini UKOME değil Şoförler Odası belirliyor ve resmi belge yayımlanmıyor; bu rakamlar YALNIZCA haber kaynaklarına dayanıyor (Sözcü/Cumhuriyet/Dünya, 16.09.2026'da tarandı). Bu yüzden şehir 'verified: false' işaretli — uygulama kullanıcıya 'tarifeler resmî olarak doğrulanmadı' uyarısı gösterir. Şehir içi taksi için geçiş ücreti modellenmedi (Ankara'da şehir içi ücretli geçiş yok).",
       "center": {
         "lat": 39.9334,
         "lon": 32.8597
@@ -202,8 +202,8 @@
       "country": "TR",
       "currency": "TRY",
       "singleTariff": true,
-      "verified": true,
-      "note": "1 Nisan 2026 tarifesi (İzmir BŞB meclisi): açılış ₺34,50, km ₺49,50, indi-bindi ₺180, bekleme ₺207/saat (₺3,45/dk). NTV + DHA çapraz doğrulama; 7/24 tek tarife. Şehir-içi taksi için toll modellenmedi.",
+      "verified": false,
+      "note": "İzmir BŞB Meclis Kararı 2026/524 (17.04.2026, yürürlük 30.04.2026) olarak raporlandı: açılış ₺40, km ₺54, bekleme ₺4,00/dk, indi-bindi ₺210. ⚠️ DOĞRULANMADI: kararın resmi PDF adresi (tuhim.izmir.bel.tr) 16.09.2026'da DNS'te çözülmedi; ikincil siteler çelişiyor (kimi 30/43, kimi 40/54; minimum kimi 150 kimi 210). Değerler GÜVENLİ YÖNDE (yüksek olan) seçildi — tavan yüksek kalırsa dolandırıcılık kaçar, düşük kalırsa dürüst şoför suçlanır; ikincisi çok daha kötü. Şehir 'verified: false' → kullanıcı uyarı görür. İzmir'de gece tarifesi yok; il dışına çıkışta +%50 uygulanır (modellenmedi).",
       "center": {
         "lat": 38.4237,
         "lon": 27.1428
