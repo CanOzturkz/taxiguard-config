@@ -1,6 +1,6 @@
 # TaxiGuard — Privacy Policy
 
-_Last updated: 12 July 2026_
+_Last updated: 29 September 2026_
 
 TaxiGuard ("the app") helps passengers estimate legal taxi fares and detect overcharging. This policy explains what data the app uses and how.
 
@@ -9,7 +9,10 @@ TaxiGuard ("the app") helps passengers estimate legal taxi fares and detect over
 ### Location data
 - The app uses your device's **precise location** to: center the map, calculate a route and fare estimate to your chosen destination, and measure distance/time **during an active trip** that you start yourself.
 - While a trip is active, location tracking runs as a **foreground service with a visible notification** and continues while your screen is off. Tracking **stops when you end the trip** or close the app.
-- Precise location data is processed **on your device** and is never uploaded. The only location-derived data that leaves your device is the **coarse (~110 m), anonymous** trip statistics described below — and only if sharing is enabled.
+- The trip itself is measured **on your device**: the GPS track of your ride (the sequence of positions used to compute distance, time and fare) is never uploaded.
+- Two things do leave your device, and only these:
+  1. When you ask for a route or type a destination, your **current coordinates and the destination** are sent to Google Maps Platform to compute the route and address suggestions (see "Data sent to third parties" below).
+  2. When a trip ends, the **coarse (~110 m), anonymous** trip statistics described below are sent — and only if sharing is enabled.
 
 ### Trip history
 - Trip summaries (date, distance, duration, fare estimate, and the amount you enter for a price check) are stored **on your device**. You can delete them at any time from the Trip History screen ("Clear history").
@@ -20,11 +23,11 @@ TaxiGuard ("the app") helps passengers estimate legal taxi fares and detect over
 - Records contain **no name, e-mail, phone number, or account** — only a random installation identifier that cannot be linked to you.
 - Data is stored on Supabase infrastructure in the **EU (Frankfurt)**. See [Supabase Privacy](https://supabase.com/privacy).
 - Anonymous statistics are **automatically deleted after 90 days**.
-- You can turn this off anytime: **Trip History → "Share anonymous trip stats"**. When off, nothing is sent.
+- You can turn this off anytime: **Settings (tap the TaxiGuard badge on the map) → "Share anonymous trip stats"**. When off, nothing is sent.
 
 ### Crash reports (diagnostics)
 - If the app crashes, an **anonymous crash report** is sent to Sentry (Functional Software, Inc.) so we can fix the bug. A report contains technical diagnostics only: the error and stack trace, app version, device model and OS version.
-- Crash reports contain **no location data**, no trip contents, no names and no identifiers, and are used solely for fixing defects. Reports are processed on Sentry's **EU (Germany) infrastructure**. See [Sentry's Privacy Policy](https://sentry.io/privacy/).
+- Crash reports contain **no location data**, no trip contents, no names and no identifiers, and are used solely for fixing defects. The network-request trail attached to a report is stripped of its query parameters before it leaves the device, so coordinates contained in request addresses are not included. Reports are processed on Sentry's **EU (Germany) infrastructure**. See [Sentry's Privacy Policy](https://sentry.io/privacy/).
 
 ### Data sent to third parties
 To provide its features, the app sends limited data to the following services:
