@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "tariffVersion": "2026-09-16",
   "source": "İstanbul: İBB Meclis Kararı 813 (17.07.2026, yürürlük 20.07.2026) — TUHİM resmi ücret tarifesi PDF'inden doğrulandı · Ankara: 1 Mart 2026 tarifesi (YALNIZ habere dayalı, resmi belge yayımlanmıyor) · İzmir: İzmir BŞB Meclis Kararı 2026/524 (17.04.2026, yürürlük 30.04.2026) · Geçiş ücretleri: KGM 2026 tarifeleri (15 Temmuz/FSM iki yönlü, 01.01.2026'dan geçerli) + Avrasya Tüneli 1 Temmuz 2026",
-  "lastVerified": "2026-09-16",
+  "lastVerified": "2026-11-02",
   "meterCalibration": 1.05,
   "defaultCity": "istanbul",
   "remoteConfigUrl": "https://raw.githubusercontent.com/CanOzturkz/taxiguard-config/main/tariffs.json",
